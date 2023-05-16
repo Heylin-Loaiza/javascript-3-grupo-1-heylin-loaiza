@@ -47,4 +47,5 @@ p {
   height: 38px;
   padding: 7px 20px;
   background-color: aliceblue;
+  cursor: pointer;
 }
