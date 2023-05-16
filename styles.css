@@ -31,16 +31,12 @@ p {
   margin-bottom: 40px;
 }
 
-.jokeCard,
-.bg-color {
+.joke-text {
   background-color: aliceblue;
   width: 95%;
   height: 100%;
   margin: 10px auto;
   border-radius: 10px;
-}
-
-.joke-text {
   padding: 10px;
   width: 90%;
 }
