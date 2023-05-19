@@ -8,6 +8,12 @@ p {
   margin: 0;
 }
 
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
 #input {
   border: 1px solid grey;
   border-radius: 6px ;
@@ -24,6 +30,7 @@ p {
 
 .container {
   background-color: rgba(0, 255, 255, 0.582);
+  border-radius: 5px;
   height: 60%;
   width: 50%;
   text-align: center;

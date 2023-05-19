@@ -1,21 +1,17 @@
-const searchJokes = async function(word){
-  const response = await fetch(`https://icanhazdadjoke.com/search?term=${word}`,
-    {headers: {
-      'Accept': 'application/json'
-    }
-  });
-  const data = await response.json(); 
+import { searchJokes } from "./api.js";
+
+const searchBtn = function(){
+  const button = document.querySelector('#searchJoke');
   const jokeBox = document.querySelector('#jokeBox');
-  data.results < 1 ? jokeBox.innerHTML = `<p class="joke-text">No hubo resultados</p>` :
-  jokeBox.innerHTML = `${data.results.map(joke => `<p class="joke-text">${joke.joke}</p>`).join('')}` 
+
+  button.addEventListener('click', async function(e){
+    e.preventDefault()
+    const input = document.querySelector('#input').value
+    const jokeResults = input !== '' ? await searchJokes(input) : null
+
+    jokeResults.results < 1 ? jokeBox.innerHTML = `<p class="joke-text">No hubo resultados</p>` :
+    jokeBox.innerHTML = `${jokeResults.results.map(joke => `<a href="../store.html" class="joke-text">${joke.joke}</a>`).join('')}` 
+  })
 }
 
-const button = document.querySelector('#searchJoke')
-
-button.addEventListener('click', function(e){
-  const input = document.querySelector('#input').value
-  e.preventDefault()
-  input === '' ? null : searchJokes(input)
-})
-
-export {searchJokes}
+export default searchBtn

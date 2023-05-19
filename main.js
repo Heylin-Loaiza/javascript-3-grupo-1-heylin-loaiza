@@ -1,4 +1,5 @@
-import {dadJokes} from './modules/generator.js';
-import {searchJokes} from './modules/search.js';
+import generatorDadJokes from './modules/generator.js';
+import searchBtn from './modules/search.js';
 
-dadJokes()
+generatorDadJokes()
+searchBtn()

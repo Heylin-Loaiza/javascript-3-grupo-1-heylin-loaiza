@@ -1,21 +1,13 @@
-const dadJokes = async function (){
-  const response = await fetch("https://icanhazdadjoke.com/",
-    {headers: {
-      'Accept': 'application/json'
-    }
-  });
-  const data = await response.json();
-  randomJokes(data.joke)
-}
+import { randomJokes } from "./api.js";
 
-function randomJokes (joke){
+const generatorDadJokes = function (){
   const jokeCard = document.querySelector('#jokeCard');
   const button = document.querySelector('#reload-btn');
 
-  button.addEventListener("click", function(){
-    dadJokes()
-    jokeCard.innerHTML = `<p class="joke-text">${joke}</p>`
+  button.addEventListener("click", async function(){
+    const joke = await randomJokes()
+    jokeCard.innerHTML = `<a href="../store.html" class="joke-text">${joke.joke}</a>`
   })
 }
 
-export {dadJokes}
+export default generatorDadJokes;
