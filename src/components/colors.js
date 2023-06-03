@@ -1,4 +1,4 @@
-import Publisher from "../observer.js";
+import Publisher from "../Observer.js";
 
 const observerColor = new Publisher();
 

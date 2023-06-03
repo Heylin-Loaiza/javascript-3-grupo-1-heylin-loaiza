@@ -1,5 +1,5 @@
-import Publisher from "../observer.js";
-import {storage} from "../config.js";
+import Publisher from "../Observer.js";
+import {state, storage} from "../config.js";
 
 const observerProduct = new Publisher();
 
@@ -10,8 +10,10 @@ function notifyProduct(event) {
 function createButtons() {
   const productsWrap = document.querySelector('#products-wrap');
   const storages = Object.keys(storage)
-  storages.shift()
-  storages.forEach(element => {
+
+  const filterProducts = storages.filter(prod => prod !== state.product);
+  
+  filterProducts.forEach(element => {
     const btn = document.createElement('button');
     btn.classList.add('products__btn');
     btn.dataset.productid = element;

@@ -1,5 +1,5 @@
-import { observerProduct } from './products.js';
 import {state, storage} from '../config.js';
+import { observerProduct } from './products.js';
 import { observerColor } from './colors.js';
 
 const title= document.getElementById('title');
@@ -17,5 +17,9 @@ function changeColor (color){
   state.color = color
 }
 
-observerProduct.subscribe(createDetails);
-observerColor.subscribe(changeColor);
+function initDetails(){
+  observerProduct.subscribe(createDetails);
+  observerColor.subscribe(changeColor);
+}
+
+export default initDetails;
