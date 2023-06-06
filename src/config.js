@@ -1,9 +1,10 @@
 const state = {
   product: 'shirt',
-  color: 'white'
+  color: 'white',
+  joke: ''
 }
 
-const storage = {
+const inventory = {
   shirt: {
     white: '$10',
     black: '$13',
@@ -22,4 +23,4 @@ const storage = {
   }
 };
 
-export {state, storage}
+export {state, inventory}

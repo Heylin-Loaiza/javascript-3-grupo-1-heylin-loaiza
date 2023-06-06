@@ -1,7 +1,6 @@
 import { observerProduct } from './products.js';
-import {state, storage} from '../config.js';
+import {state} from '../config.js';
 import { observerColor } from './colors.js';
-
 
 const mainImg = document.querySelector('#main-img');
 
@@ -18,6 +17,3 @@ function changeMainImgColor(color){
 // /// Suscribir
 observerProduct.subscribe(changeMainImg);
 observerColor.subscribe(changeMainImgColor);
-
-
-

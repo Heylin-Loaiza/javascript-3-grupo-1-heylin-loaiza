@@ -12,27 +12,23 @@
     <section>
       <section>
         <img id="main-img" src="/img/product-shirt-white.jpg" alt="">
-        <div id="color-inputs"> <!--crear de manera dinámica-->
-          <div> <!--color negro-->
-            <input data-id="black" class="inputColor black active-color" type="radio" value="black" name="product-color">
-            <label for="black">black</label>
-          </div>
-          <div> <!--color blanco-->
-            <input data-id="white" class="inputColor white" type="radio" value="white" name="product-color">
-            <label for="white">white</label>
-          </div>
+        <div id="container-color-inputs"> 
+      <!-- <div> 
+        <input data-id="${color}" class="inputColor ${color}" type="radio" value="${color}" name="product-color">
+        <label for="${color}">${color}</label>
+      </div>` -->
         </div>
       </section>
       <section>
-        <h2 id="title">t</h2>
-        <p id="price">$0</p>
-        <p id="joke">b</p>
+        <h2 id="title"></h2>
+        <p id="price"></p>
+        <p id="joke"></p>
         <!-- random jokes --> 
-        <!-- <div class="container">
+        <div class="container">
           <div id="jokeCard">
           </div>
           <button class="btn" id="reload-btn">Get another joke!</button>
-        </div> -->
+        </div>
       </section>
     </section>
     <section>
@@ -45,7 +41,7 @@
     </section>
   </main>
 </body>
-<script type="module" src="./src/components/products.js"></script>
+<script type="module" src="./src/components/store/store.js"></script>
 <script type="module" src="./src/components/visualizer.js"></script>
 <script type="module" src="./src/components/colors.js"></script>
 </html>
