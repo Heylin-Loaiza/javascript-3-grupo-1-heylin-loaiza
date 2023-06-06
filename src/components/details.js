@@ -2,14 +2,23 @@ import {state, inventory} from '../config.js';
 import { observerProduct } from './products.js';
 import { observerColor } from './colors.js';
 import { randomJokes } from '../api.js';
+import { idJokes } from '../api.js';
 
 const title= document.getElementById('title');
 const price = document.getElementById('price');
 const joke = document.getElementById('joke_p');
 
 async function render() {
-  const apiJoke = await randomJokes();
-  joke.textContent = `${apiJoke.joke}`
+  const urlParams = new URLSearchParams(window.location.search);
+  const jokeId = urlParams.get("jokeid");
+
+  if (jokeId) {
+    const apiJoke = await idJokes(jokeId);
+    joke.textContent = apiJoke.joke;
+  } else {
+    joke.textContent = "No joke selected.";
+  }
+
   title.textContent = `${state.color} ${state.product} with joke`;
   price.textContent = `${inventory[state.product] [state.color]}`;
 }
