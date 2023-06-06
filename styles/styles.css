@@ -61,3 +61,20 @@ img {
   background-color: aliceblue;
   cursor: pointer;
 }
+
+.cart {
+  width: 30%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: aliceblue;
+  height: 100vh;
+  border-left: 3px solid;
+  padding: 10px 30px;
+}
+
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

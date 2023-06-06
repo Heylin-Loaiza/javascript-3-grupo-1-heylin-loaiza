@@ -5,10 +5,13 @@ import { randomJokes } from '../api.js';
 
 const title= document.getElementById('title');
 const price = document.getElementById('price');
+const joke = document.getElementById('joke_p');
 
-function render() {
+async function render() {
+  const apiJoke = await randomJokes();
+  joke.textContent = `${apiJoke.joke}`
   title.textContent = `${state.color} ${state.product} with joke`;
-  price.textContent = `${inventory[state.product] [state.color]}`
+  price.textContent = `${inventory[state.product] [state.color]}`;
 }
 
 function createDetails (product){

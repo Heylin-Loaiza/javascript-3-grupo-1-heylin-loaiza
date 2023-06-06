@@ -14,6 +14,9 @@ function changeMainImgColor(color){
   state.color= color
 }
 
-// /// Suscribir
-observerProduct.subscribe(changeMainImg);
-observerColor.subscribe(changeMainImgColor);
+function initVisualizer(){
+  observerProduct.subscribe(changeMainImg);
+  observerColor.subscribe(changeMainImgColor);
+}
+
+export default initVisualizer;

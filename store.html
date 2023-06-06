@@ -12,6 +12,7 @@
     <section>
       <section>
         <img id="main-img" src="/img/product-shirt-white.jpg" alt="">
+        <!-- <p class="joke_p"></p> -->
         <div id="container-color-inputs"> 
       <!-- <div> 
         <input data-id="${color}" class="inputColor ${color}" type="radio" value="${color}" name="product-color">
@@ -22,7 +23,8 @@
       <section>
         <h2 id="title"></h2>
         <p id="price"></p>
-        <p id="joke"></p>
+        <p id="joke_p"></p>
+        <button id="add-to-cart">Add to cart</button>
         <!-- random jokes --> 
         <div class="container">
           <div id="jokeCard">
@@ -40,8 +42,12 @@
       </div>
     </section>
   </main>
+  <section id="cart" class="cart">
+    <div class="cart__header">
+      <h2>Cart</h2>
+      <button>Close</button>
+    </div>
+  </section>
 </body>
 <script type="module" src="./src/components/store/store.js"></script>
-<script type="module" src="./src/components/visualizer.js"></script>
-<script type="module" src="./src/components/colors.js"></script>
 </html>
