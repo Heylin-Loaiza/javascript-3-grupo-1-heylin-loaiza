@@ -1,0 +1,53 @@
+.card__container {
+  padding-left: 0;
+  list-style: none;
+}
+
+.card {
+  width: 250px;
+  min-height: 265px;
+  background-color: white;
+}
+
+.card__wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.card__img {
+  width: 100%;
+  min-height: 100px;
+  margin: 0;
+}
+
+.card__info {
+  min-height: 150px;
+  padding: 20px 20px 0 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card_info_name {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card__cta {
+  font-size: 22px;
+  padding: 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  cursor: pointer;
+}
+
+.card__cta::after {
+  cursor: pointer;
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
