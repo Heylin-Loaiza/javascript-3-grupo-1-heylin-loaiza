@@ -1,9 +1,24 @@
-import eventsResults from '../api.js';
+const ulCard = document.getElementById('ul__card');
 
-const navContainer = document.getElementById('nav');
+function renderCards(data) {
+  let cards = '';
+  data.forEach(element => {
+    const { title, image, date, location, price } = element;
+    const time = new Date(date);
+    cards += `
+        <li class="card">
+          <div class="card__wrapper">
+            <img class="card__img" src="${image}" alt="">
+            <div class="card__info">
+              <p class="card_info_name">${title}</p>
+              <p class="card_info_date">${time}</p>
+              <p class="card_info_location">${location.city}</p>
+              <p class="card_info_price">${price}</p>
+            </div>
+          </div>
+        </li>`; 
+  })
+  ulCard.innerHTML = cards;
+}
 
-
-navContainer.addEventListener('click', () => {
-  
-})
-
+export default renderCards;
