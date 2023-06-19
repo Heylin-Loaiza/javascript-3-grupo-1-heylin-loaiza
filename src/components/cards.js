@@ -1,10 +1,7 @@
-const divCard = document.getElementById('div__card');
+const ulCard = document.getElementById('ul__card');
 
 function renderCards(data) {
   let cards = '';
-  const ul = document.createElement('ul');
-  ul.classList.add('card__container');
-
   data.forEach(element => {
     const { title, image, date, location, price } = element;
     const time = new Date(date);
@@ -21,8 +18,7 @@ function renderCards(data) {
           </div>
         </li>`; 
   })
-  ul.innerHTML = cards;
-  divCard.appendChild(ul);
+  ulCard.innerHTML = cards;
 }
 
 export default renderCards;

@@ -6,7 +6,7 @@ const categories = [
   {name:'Art', category: 'art'},
   {name:'Favorite', category: 'favorite'},
   {name:'Interested', category: 'interested'},
-  {name:'Going', category: 'going'},
+  {name:'Going', category: 'going'}
 ]
 
 export default categories
