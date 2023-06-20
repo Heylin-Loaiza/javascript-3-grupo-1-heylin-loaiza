@@ -1,4 +1,4 @@
-import proxy from '../proxy/Proxy.js';
+import proxy from '../patterns/Proxy.js';
 import renderCards from './cards.js';
 
 function initNav() {
