@@ -1,9 +1,8 @@
-import proxy from '../proxy/Proxy.js';
+import proxy from '../patterns/Proxy.js';
 import renderCards from './cards.js';
 
-const tabs = document.querySelectorAll('.tabs')
-
-function nav() {
+function initNav() {
+  const tabs = document.querySelectorAll('.tabs')
   tabs.forEach(element => {
     element.addEventListener('click', async (event) => {
       event.preventDefault()
@@ -14,8 +13,4 @@ function nav() {
   })
 }
 
-function initInfo(){
-  nav()
-}
-
-export default initInfo;
+export default initNav;
