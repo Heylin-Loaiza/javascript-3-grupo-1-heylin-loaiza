@@ -58,24 +58,3 @@ const method = Object.freeze(state);
 
 export default method;
 
-////////  EJEMPLO  STORAGE ////////
-// form.addEventListener('submit', function(event) {
-//   event.preventDefault(); 
-//   validacionForm();
-
-//   user.name = nameUser.value;
-
-//   sessionStorage.setItem('user', JSON.stringify(user));
-
-//   signup.innerHTML = `Bienvenid@, ${user.name}!`
-//   modal.style.display = 'none'
-// });
-
-// (function verificar(){
-//   const userJSON = sessionStorage.getItem('user');
-
-// if (userJSON) {
-//   const user = JSON.parse(userJSON);
-//   signup.innerHTML = `Bienvenid@, ${user.name}`
-// }
-// })();
