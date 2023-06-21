@@ -1,0 +1,31 @@
+.fav-btn{
+  font-size:26px;
+  background: none;
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 6px 5px 0;
+  box-shadow: 0 0 9px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.event__btn {
+  border: 2px #50e3c2 solid;
+  padding: 6px 8px;
+  border-radius: 5px;
+  background-color: white;
+  color: #50e3c2;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.event__btn--bg {
+  background-color: #50e3c2;
+  color: white;
+}

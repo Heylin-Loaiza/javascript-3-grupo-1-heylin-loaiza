@@ -2,10 +2,10 @@ import categories from '../config.js';
 
 const navegation = document.getElementById('nav');
 
-function renderTabs(start, end) {
+function renderTabs() {
   let btn = '';
-  const categoriesToShow = categories.slice(start, end);
-  categoriesToShow.forEach(element => {
+  //const categoriesToShow = categories.slice(start, end);
+  categories.forEach(element => {
     const {name , category} = element;
     btn += `
     <button data-id="${category}" class="tabs">${name}</button>`
