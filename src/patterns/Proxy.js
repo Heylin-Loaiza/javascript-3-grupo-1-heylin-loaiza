@@ -19,37 +19,18 @@ class CacheStorage {
   }
 }
 
-// const handler = {
-//   async get (data, category) {
-//     if (data[category] === undefined) {
-//       const fetch = await eventsResults(category);
-//       console.log('usando fetch')
-//       data.addToCache(category, fetch)
-//       return data.getCache(category)
-
-//     } else {
-//       console.log('usando cache')
-//       return data.getCache(category)
-//     }
-//   }
-// };
-
 const handler = {
-  async get (data, category) {
-    if (data[category]) {
-      console.log('usando cache')
-      return data.getCache(category)
-
-    } else {
-      console.log(data[category])
+  async get(data, category) {
+    if (data.getCache(category) !== undefined) {
+      return data.getCache(category);
+    } 
+    else {
       const fetch = await eventsResults(category);
-      console.log('usando fetch')
-      data.addToCache(category, fetch)
-      return data.getCache(category)
+      data.addToCache(category, fetch);
+      return data.getCache(category);
     }
-  }
-}
-
+  },
+};
 
 const cache = new CacheStorage('cache')
 const proxy = new Proxy(cache, handler);
