@@ -1,16 +1,30 @@
-import categories from '../config.js';
+import {categories, accountCategories} from '../config.js';
 
-const navegation = document.getElementById('nav');
+const divTabs = document.getElementById('tabs-menu');
 
-function renderTabs() {
-  let btn = '';
-  //const categoriesToShow = categories.slice(start, end);
-  categories.forEach(element => {
-    const {name , category} = element;
-    btn += `
-    <button data-id="${category}" class="tabs">${name}</button>`
-  });
-  navegation.insertAdjacentHTML('beforeend', btn) 
+function renderTabs(category, name) {
+  let btn = `
+  <button data-id="${category}" class="tabs tabs-js">${name}</button>`
+  divTabs.insertAdjacentHTML('beforeend', btn) 
+  stylesBtn()
 }
 
-export default renderTabs
+function indexTabs(){
+  categories.forEach( element => {
+    const {name , category} = element;
+    renderTabs(category, name)
+  })
+}
+
+function accountTabs() {
+  accountCategories.forEach( element => {
+    const {name , category} = element;
+    renderTabs(category, name)
+  })
+}
+
+function stylesBtn(){
+  const btnTabs = document.querySelector('.tabs');
+  
+}
+export {indexTabs, accountTabs}

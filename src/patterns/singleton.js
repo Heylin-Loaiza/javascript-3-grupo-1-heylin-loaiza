@@ -2,7 +2,7 @@
 let interestedList = [];
 // let goingList = [];
 
-const state = {
+const singletonState = {
   // getFavorites() {
   //   return favoritesList;
   // },
@@ -35,11 +35,11 @@ const state = {
 
   addInterested(event){
     interestedList.push(event)
-    saveInterested()
+    this.saveInterested()
   },
   removeFavorite(event) {
     interestedList = interestedList.filter((item) => item !== event)
-    saveInterested()
+    this.saveInterested()
   },
 
   saveInterested() {
@@ -54,7 +54,7 @@ const state = {
   },
 }
 
-const method = Object.freeze(state);
+const state = Object.freeze(singletonState);
 
-export default method;
+export default state;
 
