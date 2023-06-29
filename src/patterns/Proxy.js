@@ -35,4 +35,4 @@ const handler = {
 const cache = new CacheStorage('cache')
 const proxy = new Proxy(cache, handler);
 
-export {proxy};
+export default proxy;

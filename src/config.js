@@ -12,4 +12,5 @@ const accountCategories = [
   {name:'Going', category: 'going'}
 ]
 
+
 export {categories, accountCategories}

@@ -37,17 +37,17 @@ const singletonState = {
     interestedList.push(event)
     this.saveInterested()
   },
-  removeFavorite(event) {
+  removeInterested(event) {
     interestedList = interestedList.filter((item) => item !== event)
     this.saveInterested()
   },
 
   saveInterested() {
-    localStorage.setItem('favorites', JSON.stringify(interestedList));
+    localStorage.setItem('interested', JSON.stringify(interestedList));
   },
 
   loadInterested() {
-    const interestedData = localStorage.getItem('favorites');
+    const interestedData = localStorage.getItem('interested');
     if (interestedData) {
       interestedList = JSON.parse(interestedData);
     }
@@ -55,6 +55,6 @@ const singletonState = {
 }
 
 const state = Object.freeze(singletonState);
-
+state.loadInterested()
 export default state;
 

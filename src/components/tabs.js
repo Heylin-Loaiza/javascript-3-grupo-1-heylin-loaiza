@@ -4,7 +4,7 @@ const divTabs = document.getElementById('tabs-menu');
 
 function renderTabs(category, name) {
   let btn = `
-  <button data-id="${category}" class="tabs tabs-js">${name}</button>`
+  <button data-id="${category}" class="tabs tabs-js tabs-account">${name}</button>`
   divTabs.insertAdjacentHTML('beforeend', btn) 
   stylesBtn()
 }

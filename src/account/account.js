@@ -1,5 +1,6 @@
-import {accountTabs} from '../components/tabs.js';
 import {initNav} from '../components/event.js';
+import { renderInterested } from '../event-Tabs/add-events-btn.js';
 
-accountTabs()
+
 initNav()
+renderInterested()
