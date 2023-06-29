@@ -1,6 +1,6 @@
-import renderTabs from './components/tabs.js'
+import {indexTabs} from './components/tabs.js'
 import {initNav} from './components/event.js'
 
 
-renderTabs()
+indexTabs()
 initNav()

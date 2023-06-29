@@ -6,4 +6,11 @@ const categories = [
   {name:'Art', category: 'art'}
 ]
 
-export default categories
+const accountCategories = [
+  {name:'Favorite', category: 'favorite'},
+  {name:'Interested', category: 'interested'},
+  {name:'Going', category: 'going'}
+]
+
+
+export {categories, accountCategories}
