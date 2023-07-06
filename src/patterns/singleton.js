@@ -14,7 +14,7 @@ const singletonState = {
     this.saveStateList()
   },
 
-  getList(list, id){
+  getEvent(list, id){
     const event = stateList[list].find((item) => item.id === id)
     return event
   },
