@@ -9,9 +9,7 @@ function initNav() {
       event.preventDefault()
       const typeEvents = event.currentTarget.dataset.id
       const data = await proxy[typeEvents];
-      ///renderiza las cards en el home
-      renderCards(data, typeEvents)
-      /// envía la categoría a los botones de interested
+      renderCards(data)
       addEvent(typeEvents)
     })
   })

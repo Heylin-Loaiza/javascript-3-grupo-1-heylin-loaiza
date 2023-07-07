@@ -10,7 +10,7 @@ let buttons = '';
     } else if(item === 'interested') {
       buttons += `<button id="${id}" value="${item}" class="event__btn js-event-state">${item}</button>`
     } else {
-      buttons += `<button id="${id}" value="${item}" class="event__btn event__btn--bg js-event-state">${item}</button>`
+      buttons += `<button id="${id}" value="${item}" class="event__btn event__btn--bg js-event-state">${item}!</button>`
     }
   })
 

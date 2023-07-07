@@ -2,7 +2,7 @@ import { renderCardsBtn } from './buttons.js';
 
 const ulCard = document.getElementById('ul__card');
 
-function renderCards(data, category) {
+function renderCards(data) {
   let cards = '';
   data.forEach(element => {
     const { id, title, image, date, location, price } = element;
@@ -19,7 +19,7 @@ function renderCards(data, category) {
           </div>
         </div>
         <div class="btn">
-          ${renderCardsBtn(id, category)}
+          ${renderCardsBtn(id)}
         </div>
       </li>`;
     
