@@ -13,7 +13,7 @@ function addEvent(category){
 }
 
 function handleEventState(stateList, event) {
-  const newEvent = state.getEvent(stateList, event.id)
+  const newEvent = state.getEvent(stateList, event.id);
 
   if (stateList === 'going') {
     const eventInterestedList = state.getEvent('interested', event.id)
@@ -46,14 +46,30 @@ function handleEventState(stateList, event) {
   }
 
 ////prueba remover
-function detailDisplay() {
-  if (words && words.style.display === "none") {
-    words.style.display = "block";
-  } else if (words) {
-    words.style.display = "none";
-  }
+
+  // const button = document.querySelector(`button[value="${stateList}"]`);
+  // button.classList.toggle('prueba')
+  // button.textContent = 'Eliminar de la lista';
+  // button.onclick = handleRemoveEvent;
+
 }
 
+function handleRemoveEvent(stateList, event){
+  //console.log(stateList)
+  //const addBtn = document.querySelectorAll('.js-event-state');
+  // const button = document.getElementsByClassName(`${stateList}`);
+  // button.classList.toggle('prueba')
+  // //button.onclick = handleEventState;
+  // console.log(button)
+
+  if (stateList === 'going' || stateList === 'interested' || stateList === 'favorites') {
+    const eventList = state.getEvent(stateList, event.id)
+  
+    if(eventList){
+      state.removeListEvents(stateList, event)
+    } 
+  } 
+  
 }
 
 async function addEvents(id, category, stateList) {
@@ -61,7 +77,14 @@ async function addEvents(id, category, stateList) {
   const event = data.find(element => {
     return element.id === id;
   });
-  handleEventState(stateList, event)
+  // handleEventState(stateList, event)
+  // handleRemoveEvent(stateList, event)
+  if (!state.getEvent(stateList, event.id)) {
+    handleEventState(stateList, event);
+  } else {
+    handleRemoveEvent(stateList, event);
+  }
+
 }
 
 function loadEvents(){
