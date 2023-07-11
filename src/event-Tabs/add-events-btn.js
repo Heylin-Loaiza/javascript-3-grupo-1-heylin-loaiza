@@ -59,11 +59,6 @@ function handleEventState(button, event) {
 
   if(value === 'favorites'){
     state.addToList(value, event);
-
-    let icon = document.querySelector('ion-icon');
-    icon.onclick = function(){
-      icon.classList.toggle('active');
-    }
   }
   
 }
