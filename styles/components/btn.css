@@ -1,4 +1,4 @@
-.fav-btn{
+.favorites-btn{
   font-size:26px;
   background: none;
   border: 1px solid grey;
@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .event__btn {
@@ -28,4 +29,20 @@
 .event__btn--bg {
   background-color: #50e3c2;
   color: white;
+}
+
+.event__btn::first-letter {
+  text-transform: uppercase;
+}
+
+.event__btn--active {
+  display: block;
+  background: none;
+  text-decoration: underline;
+  border-style: none;
+  color: #50e3c2;
+}
+
+.container--display{
+  display: block;
 }

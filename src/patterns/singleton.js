@@ -1,60 +1,44 @@
-//let favoritesList = [];
-let interestedList = [];
-// let goingList = [];
-
-const singletonState = {
-  // getFavorites() {
-  //   return favoritesList;
-  // },
-
-  // addFavorite(event) {
-  //   favoritesList.push(event);
-  //   saveFavorites();
-  // },
-
-  // removeFavorite(event) {
-  //   favoritesList = favoritesList.filter((item) => item !== event)
-  //   saveFavorites()
-  // },
-
-  // saveFavorites() {
-  //   localStorage.setItem('favorites', JSON.stringify(favoritesList));
-  // },
-
-  // loadFavorites() {
-  //   const favoritesData = localStorage.getItem('favorites');
-  //   if (favoritesData) {
-  //     favoritesList = JSON.parse(favoritesData);
-  //   }
-  // },
-
-  /// Interested ///
-  getInterested(){
-    return interestedList;
-  },
-
-  addInterested(event){
-    interestedList.push(event)
-    this.saveInterested()
-  },
-  removeInterested(event) {
-    interestedList = interestedList.filter((item) => item !== event)
-    this.saveInterested()
-  },
-
-  saveInterested() {
-    localStorage.setItem('interested', JSON.stringify(interestedList));
-  },
-
-  loadInterested() {
-    const interestedData = localStorage.getItem('interested');
-    if (interestedData) {
-      interestedList = JSON.parse(interestedData);
-    }
-  },
+const stateList= {
+  favorites: [],
+  interested: [],
+  going: []
 }
 
-const state = Object.freeze(singletonState);
-state.loadInterested()
-export default state;
+const singletonState = {
+  getStateList(){
+    return {...stateList}
+  },
 
+  addToList(list, event){
+  stateList[list].push(event)
+    this.saveStateList()
+  },
+
+  getEvent(list, id){
+    const event = stateList[list].find((item) => item.id === id)
+    return event
+  },
+
+  removeListEvents(list, event) {
+    stateList[list] = stateList[list].filter((item) => item !== event)
+    this.saveStateList()
+  },
+
+  saveStateList() {
+    localStorage.setItem('stateList', JSON.stringify(stateList));
+  },
+
+  loadStateList() {
+    const data = JSON.parse(localStorage.getItem('stateList'));
+    
+    if(data){stateList.favorites = data.favorites || [];
+    stateList.interested = data.interested || [];
+    stateList.going = data.going || [];
+    this.saveStateList()}
+  }
+};
+
+
+const state = Object.freeze(singletonState);
+state.loadStateList()
+export default state;

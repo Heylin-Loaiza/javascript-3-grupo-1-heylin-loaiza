@@ -1,6 +1,8 @@
+import { renderCardsBtn } from './buttons.js';
+
 const ulCard = document.getElementById('ul__card');
 
-function renderCards(data, category) {
+function renderCards(data) {
   let cards = '';
   data.forEach(element => {
     const { id, title, image, date, location, price } = element;
@@ -9,7 +11,6 @@ function renderCards(data, category) {
       <li class="card">
         <div class="card__wrapper">
           <img class="card__img" src="${image}" alt="">
-          <Button class="fav-btn">fav</Button>
           <div class="card__info">
             <p class="card_info_name">${title}</p>
             <p class="card_info_date">${time}</p>
@@ -17,11 +18,11 @@ function renderCards(data, category) {
             <p class="card_info_price">${price}</p>
           </div>
         </div>
-        <div class="btn">
-          <Button value="${id}" data-category="${category}" class="interested__btn event__btn">Interested</Button>
-          <Button value="${id}" data-category="${category}" class="event__btn event__btn--bg">Going</Button>
+        <div class="btn" id="${id}">
+          ${renderCardsBtn(id)}
         </div>
       </li>`;
+    
   })
   ulCard.innerHTML = cards;
 }
