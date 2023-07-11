@@ -18,7 +18,7 @@ function renderCards(data) {
             <p class="card_info_price">${price}</p>
           </div>
         </div>
-        <div class="btn">
+        <div class="btn" id="${id}">
           ${renderCardsBtn(id)}
         </div>
       </li>`;

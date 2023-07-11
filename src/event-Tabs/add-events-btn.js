@@ -7,84 +7,93 @@ function addEvent(category){
   addBtn.forEach(element => {
     element.addEventListener('click', (e) => {
       e.stopPropagation()
-      addEvents(element.id, category, element.value)
+      addEvents(element, category)
     })
   })  
 }
 
-function handleEventState(stateList, event) {
-  const newEvent = state.getEvent(stateList, event.id);
+function handleEventState(button, event) {
+  const {value} = button
+  //console.log(value)
+  const newEvent = state.getEvent(value, event.id);
 
-  if (stateList === 'going') {
+  if (value === 'going') {
     const eventInterestedList = state.getEvent('interested', event.id)
   
     if(eventInterestedList){
-      state.addToList(stateList, event);
+      state.addToList(value, event);
       state.removeListEvents('interested', event)
     } else {
       if(!newEvent){
-        state.addToList(stateList, event);
+        state.addToList(value, event);
       }
     }
+
+    const interestedBtn = document.querySelector(`button[id="${button.id}"][value="interested"]`)
+    const containerBtn = document.querySelector(`div[id="${event.id}"]`)
+    
+    button.textContent = 'Changed your mind?';
+    button.classList.add('event__btn--active')
+    containerBtn.classList.add('container--display')
+    interestedBtn.style.display = 'none';
   }
 
-  if (stateList === 'interested') {
+  if (value === 'interested') {
     const eventInterestedList = state.getEvent('going', event.id)
 
     if(eventInterestedList){
-      state.addToList(stateList, event);
+      state.addToList(value, event);
       state.removeListEvents('going', event)
     } else {
       if(!newEvent){
-        state.addToList(stateList, event);
+        state.addToList(value, event);
       }
     }
+
+    button.textContent = 'Changed your mind?';
+    const containerBtn = document.querySelector(`div[id="${event.id}"]`)
+
+    button.classList.add('event__btn--active')
+    containerBtn.classList.add('container--display')
   }
 
-  if(stateList === 'favorites'){
-    state.addToList(stateList, event);
+  if(value === 'favorites'){
+    state.addToList(value, event);
+
+    let icon = document.querySelector('ion-icon');
+    icon.onclick = function(){
+      icon.classList.toggle('active');
+    }
   }
-
-////prueba remover
-
-  // const button = document.querySelector(`button[value="${stateList}"]`);
-  // button.classList.toggle('prueba')
-  // button.textContent = 'Eliminar de la lista';
-  // button.onclick = handleRemoveEvent;
-
+  
 }
 
-function handleRemoveEvent(stateList, event){
-  //console.log(stateList)
-  //const addBtn = document.querySelectorAll('.js-event-state');
-  // const button = document.getElementsByClassName(`${stateList}`);
-  // button.classList.toggle('prueba')
-  // //button.onclick = handleEventState;
-  // console.log(button)
-
-  if (stateList === 'going' || stateList === 'interested' || stateList === 'favorites') {
-    const eventList = state.getEvent(stateList, event.id)
+function handleRemoveEvent(button, event){
+  if(button.value === 'going' || button.value === 'interested'){
+    const eventList = state.getEvent(button.value, event.id)
   
     if(eventList){
-      state.removeListEvents(stateList, event)
-    } 
-  } 
+      state.removeListEvents(button.value, event)
+    }
+  }
   
+
+  const containerBtn = document.querySelector(`div[id="${event.id}"]`);
+  const interestedBtn = document.querySelector(`button[id="${button.id}"][value="interested"]`);
+
+  button.textContent = `${button.value}`;
+  button.classList.remove('event__btn--active');
+  containerBtn.classList.remove('container--display');
+  interestedBtn.style.display = 'block';
 }
 
-async function addEvents(id, category, stateList) {
+async function addEvents(button, category) {
   const data = await proxy[category]
   const event = data.find(element => {
-    return element.id === id;
+    return element.id === button.id;
   });
-  // handleEventState(stateList, event)
-  // handleRemoveEvent(stateList, event)
-  if (!state.getEvent(stateList, event.id)) {
-    handleEventState(stateList, event);
-  } else {
-    handleRemoveEvent(stateList, event);
-  }
 
+  !state.getEvent(button.value, event.id) ? handleEventState(button, event) : handleRemoveEvent(button, event);
 }
 
 function loadEvents(){

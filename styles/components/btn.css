@@ -1,4 +1,4 @@
-.favorite-btn{
+.favorites-btn{
   font-size:26px;
   background: none;
   border: 1px solid grey;
@@ -23,7 +23,7 @@
   color: #50e3c2;
   font-weight: bold;
   font-size: 14px;
-
+  cursor: pointer;
 }
 
 .event__btn--bg {
@@ -35,9 +35,14 @@
   text-transform: uppercase;
 }
 
-.prueba {
+.event__btn--active {
+  display: block;
   background: none;
   text-decoration: underline;
   border-style: none;
   color: #50e3c2;
+}
+
+.container--display{
+  display: block;
 }

@@ -1,10 +1,10 @@
 .card__container {
-  padding-left: 0;
+  margin-top: 60px;
   list-style: none;
   display: grid;
-  justify-content: space-evenly;
+  justify-content: center;
   grid-template-columns: auto auto auto auto;
-  gap: 40px;
+  gap: 25px;
 }
 
 .card {
