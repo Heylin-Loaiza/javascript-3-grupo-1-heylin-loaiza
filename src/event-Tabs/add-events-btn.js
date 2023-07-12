@@ -36,6 +36,7 @@ function handleEventState(button, event) {
     button.classList.add('event__btn--active')
     containerBtn.classList.add('container--display')
     interestedBtn.style.display = 'none';
+    state.saveStateList()
   }
 
   if (value === 'interested') {
@@ -64,15 +65,13 @@ function handleEventState(button, event) {
 }
 
 function handleRemoveEvent(button, event){
-  if(button.value === 'going' || button.value === 'interested'){
-    const eventList = state.getEvent(button.value, event.id)
-  
-    if(eventList){
-      state.removeListEvents(button.value, event)
-    }
+  const eventList = state.getEvent(button.value, event.id)
+
+  if(eventList){
+    state.removeListEvents(button.value, event)
   }
   
-
+//button.value === 'going' || button.value === 'interested'
   const containerBtn = document.querySelector(`div[id="${event.id}"]`);
   const interestedBtn = document.querySelector(`button[id="${button.id}"][value="interested"]`);
 
