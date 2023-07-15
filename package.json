@@ -1,0 +1,27 @@
+{
+  "name": "javascript-3-grupo-1-heylin-loaiza",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Heylin-Loaiza/javascript-3-grupo-1-heylin-loaiza.git"
+  },
+  "author": "Heylin Loaiza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Heylin-Loaiza/javascript-3-grupo-1-heylin-loaiza/issues"
+  },
+  "homepage": "https://github.com/Heylin-Loaiza/javascript-3-grupo-1-heylin-loaiza#readme",
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "3.0.0"
+  }
+}
