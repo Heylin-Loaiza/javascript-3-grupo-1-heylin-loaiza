@@ -1,37 +1,37 @@
 class Plant {
-  constructor(name){
+  constructor(name) {
     this.name = name;
   }
 
-  setSoil(soil){
+  setSoil(soil) {
     this.soil = soil;
     return this;
   }
 
-  withClayPot(){
+  withClayPot() {
     this.pot = 'Clay pot';
     return this;
   }
 
-  withCeramicPot(){
+  withCeramicPot() {
     this.pot = 'Ceramic pot';
     return this;
   }
 
-  setPotStyle(style){
+  setPotDecoration(style) {
     this.style = style;
     return this;
   }
 
-  
+  setPotColor(color) {
+    this.color = color;
+    return this;
+  }
+
+  setExtra(extra) {
+    this.extra = extra;
+    return this;
+  }
 }
 
-/* {
-  name: a,
-  soil: s,
-  pot: f;
-  style: f;
-  color: s;
-  extras: [s, k, f]
-}
-*/
+export default Plant;

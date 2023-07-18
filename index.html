@@ -23,7 +23,7 @@
         <label for="mediumLight">Inside with a lot of indirect light	</label>
       </div>
       <div class="answer-group">
-        <input id="outside" type="radio" name="location" value="outside" required>
+        <input id="outside" type="radio" name="location" value="outdoor" required>
         <label for="outside">Outside</label>
       </div>
     </div>
@@ -31,11 +31,11 @@
     <div class="question">
       <p class="question-text">Will it receive direct sunlight?</p>
       <div class="answer-group">
-        <input id="sunlight" type="radio" name="sunlight" value="sunlight" required>
+        <input id="sunlight" type="radio" name="soil" value="Composed" required>
         <label for="sunlight">Yes</label>
       </div>
       <div class="answer-group">
-        <input id="noSunlight" type="radio" name="sunlight" value="noSunlight" required>
+        <input id="noSunlight" type="radio" name="soil" value="Fertilized" required>
         <label for="noSunlight">No</label>
       </div>
     </div>
@@ -43,11 +43,11 @@
     <div class="question">
       <p class="question-text">Do you have pets (cats or dogs)?</p>
       <div class="answer-group">
-        <input id="pets" type="radio" name="pets" value="pets" required>
+        <input id="pets" type="radio" name="pets" value="noToxic" required>
         <label for="pets">Yes</label>
       </div>
       <div class="answer-group">
-        <input id="noPets" type="radio" name="pets" value="noPets" required>
+        <input id="noPets" type="radio" name="pets" value="toxic" required>
         <label for="noPets">No</label>
       </div>
     </div>
@@ -59,11 +59,11 @@
         <label for="overwater">Overwater</label>
       </div>
       <div class="answer-group">
-        <input id="underwater" type="radio" name="watering" value="underwater" required>
+        <input id="underwater" type="radio" name="watering" value="default" required>
         <label for="underwater">Underwater</label>
       </div>
       <div class="answer-group">
-        <input id="neither" type="radio" name="watering" value="neither" required>
+        <input id="neither" type="radio" name="watering" value="default" required>
         <label for="neither">Neither / I don’t know	</label>
       </div>
     </div>
@@ -75,7 +75,7 @@
         <label for="minimalism">I like minimalism and material colors</label>
       </div>
       <div class="answer-group">
-        <input id="simple" type="radio" name="style" value="simple" required>
+        <input id="simple" type="radio" name="style" value="simpleDecoration" required>
         <label for="simple">I like some decoration and simple colors</label>
       </div>
       <div class="answer-group">
@@ -87,15 +87,15 @@
     <div class="question">
       <p class="question-text">Do you want to add any extra elements to your plant?</p>
       <div class="answer-group">
-        <input id="mossPole" type="checkbox" name="extra1" value="mossPole">
+        <input id="mossPole" type="checkbox" name="extras" value="mossPole">
         <label for="mossPole">Moss pole</label>
       </div>
       <div class="answer-group">
-        <input id="pebbles" type="checkbox" name="extra2" value="pebbles">
+        <input id="pebbles" type="checkbox" name="extras" value="pebbles">
         <label for="pebbles">Pebbles</label>
       </div>
       <div class="answer-group">
-        <input id="smaller" type="checkbox" name="extra3" value="smaller">
+        <input id="smaller" type="checkbox" name="extras" value="smaller">
         <label for="smaller">Smaller plants</label>
       </div>
     </div>
@@ -106,7 +106,7 @@
     </div>
   </form>
 
-  <script src="./index.js"></script>
+  <script type="module" src="/main.js"></script>
 </body>
 </html>
 
