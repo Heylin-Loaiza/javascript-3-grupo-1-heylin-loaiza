@@ -1,112 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfect plant for you..</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/styles/form.css">
-</head>
-<body>
-  <h1 class="title-form">Let us find the perfect plant for you!</h1>
-  <form action="" id="form" class="form">
-    <div class="question">
-      <p class="question-text">Where will you place your plant?</p>
-      <div class="answer-group">
-        <input id="lowLight" type="radio" name="location" value="lowLight" required>
-        <label for="lowLight">Inside with some indirect light	</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfect plant for you..</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/form.css" />
+  </head>
+  <body>
+    <h1 class="title-form">Let us find the perfect plant for you!</h1>
+    <form action="" id="form" class="form">
+      <div class="question">
+        <p class="question-text">Where will you place your plant?</p>
+        <div class="answer-group">
+          <input
+            id="lowLight"
+            type="radio"
+            name="location"
+            value="lowLight"
+            required
+          />
+          <label for="lowLight">Inside with some indirect light </label>
+        </div>
+        <div class="answer-group">
+          <input
+            id="mediumLight"
+            type="radio"
+            name="location"
+            value="mediumLight"
+            required
+          />
+          <label for="mediumLight">Inside with a lot of indirect light </label>
+        </div>
+        <div class="answer-group">
+          <input
+            id="outside"
+            type="radio"
+            name="location"
+            value="outdoor"
+            required
+          />
+          <label for="outside">Outside</label>
+        </div>
       </div>
-      <div class="answer-group">
-        <input id="mediumLight" type="radio" name="location" value="mediumLight" required>
-        <label for="mediumLight">Inside with a lot of indirect light	</label>
-      </div>
-      <div class="answer-group">
-        <input id="outside" type="radio" name="location" value="outdoor" required>
-        <label for="outside">Outside</label>
-      </div>
-    </div>
 
-    <div class="question">
-      <p class="question-text">Will it receive direct sunlight?</p>
-      <div class="answer-group">
-        <input id="sunlight" type="radio" name="soil" value="Composed" required>
-        <label for="sunlight">Yes</label>
+      <div class="question">
+        <p class="question-text">Will it receive direct sunlight?</p>
+        <div class="answer-group">
+          <input
+            id="sunlight"
+            type="radio"
+            name="soil"
+            value="Composed"
+            required
+          />
+          <label for="sunlight">Yes</label>
+        </div>
+        <div class="answer-group">
+          <input
+            id="noSunlight"
+            type="radio"
+            name="soil"
+            value="Fertilized"
+            required
+          />
+          <label for="noSunlight">No</label>
+        </div>
       </div>
-      <div class="answer-group">
-        <input id="noSunlight" type="radio" name="soil" value="Fertilized" required>
-        <label for="noSunlight">No</label>
-      </div>
-    </div>
 
-    <div class="question">
-      <p class="question-text">Do you have pets (cats or dogs)?</p>
-      <div class="answer-group">
-        <input id="pets" type="radio" name="pets" value="noToxic" required>
-        <label for="pets">Yes</label>
+      <div class="question">
+        <p class="question-text">Do you have pets (cats or dogs)?</p>
+        <div class="answer-group">
+          <input id="pets" type="radio" name="pets" value="noToxic" required />
+          <label for="pets">Yes</label>
+        </div>
+        <div class="answer-group">
+          <input id="noPets" type="radio" name="pets" value="toxic" required />
+          <label for="noPets">No</label>
+        </div>
       </div>
-      <div class="answer-group">
-        <input id="noPets" type="radio" name="pets" value="toxic" required>
-        <label for="noPets">No</label>
-      </div>
-    </div>
 
-    <div class="question">
-      <p class="question-text">Do you tend to overwater or underwater?</p>
-      <div class="answer-group">
-        <input id="overwater" type="radio" name="watering" value="overwater" required>
-        <label for="overwater">Overwater</label>
+      <div class="question">
+        <p class="question-text">Do you tend to overwater or underwater?</p>
+        <div class="answer-group">
+          <input
+            id="overwater"
+            type="radio"
+            name="watering"
+            value="overwater"
+            required
+          />
+          <label for="overwater">Overwater</label>
+        </div>
+        <div class="answer-group">
+          <input
+            id="underwater"
+            type="radio"
+            name="watering"
+            value="default"
+            required
+          />
+          <label for="underwater">Underwater</label>
+        </div>
+        <div class="answer-group">
+          <input
+            id="neither"
+            type="radio"
+            name="watering"
+            value="default"
+            required
+          />
+          <label for="neither">Neither / I don’t know </label>
+        </div>
       </div>
-      <div class="answer-group">
-        <input id="underwater" type="radio" name="watering" value="default" required>
-        <label for="underwater">Underwater</label>
-      </div>
-      <div class="answer-group">
-        <input id="neither" type="radio" name="watering" value="default" required>
-        <label for="neither">Neither / I don’t know	</label>
-      </div>
-    </div>
 
-    <div class="question">
-      <p class="question-text">How do you define your style?</p>
-      <div class="answer-group">
-        <input id="minimalism" type="radio" name="style" value="minimalism" required>
-        <label for="minimalism">I like minimalism and material colors</label>
+      <div class="question">
+        <p class="question-text">How do you define your style?</p>
+        <div class="answer-group">
+          <input
+            id="minimalism"
+            type="radio"
+            name="style"
+            value="minimalism"
+            required
+          />
+          <label for="minimalism">I like minimalism and material colors</label>
+        </div>
+        <div class="answer-group">
+          <input
+            id="simple"
+            type="radio"
+            name="style"
+            value="simpleDecoration"
+            required
+          />
+          <label for="simple">I like some decoration and simple colors</label>
+        </div>
+        <div class="answer-group">
+          <input
+            id="decoration"
+            type="radio"
+            name="style"
+            value="decoration"
+            required
+          />
+          <label for="decoration"
+            >I like a lot of decoration and bright colors</label
+          >
+        </div>
       </div>
-      <div class="answer-group">
-        <input id="simple" type="radio" name="style" value="simpleDecoration" required>
-        <label for="simple">I like some decoration and simple colors</label>
-      </div>
-      <div class="answer-group">
-        <input id="decoration" type="radio" name="style" value="decoration" required>
-        <label for="decoration">I like a lot of decoration and bright colors</label>
-      </div>
-    </div>
-    
-    <div class="question">
-      <p class="question-text">Do you want to add any extra elements to your plant?</p>
-      <div class="answer-group">
-        <input id="mossPole" type="checkbox" name="extras" value="mossPole">
-        <label for="mossPole">Moss pole</label>
-      </div>
-      <div class="answer-group">
-        <input id="pebbles" type="checkbox" name="extras" value="pebbles">
-        <label for="pebbles">Pebbles</label>
-      </div>
-      <div class="answer-group">
-        <input id="smaller" type="checkbox" name="extras" value="smaller">
-        <label for="smaller">Smaller plants</label>
-      </div>
-    </div>
 
-    <div>
-      <button type="submit" class="btn btn-bg">Get your plant!</button>
-      <button type="reset" class="btn">Clear</button>
-    </div>
-  </form>
+      <div class="question">
+        <p class="question-text">
+          Do you want to add any extra elements to your plant?
+        </p>
+        <div class="answer-group">
+          <input id="mossPole" type="checkbox" name="extras" value="mossPole" />
+          <label for="mossPole">Moss pole</label>
+        </div>
+        <div class="answer-group">
+          <input id="pebbles" type="checkbox" name="extras" value="pebbles" />
+          <label for="pebbles">Pebbles</label>
+        </div>
+        <div class="answer-group">
+          <input id="smaller" type="checkbox" name="extras" value="smaller" />
+          <label for="smaller">Smaller plants</label>
+        </div>
+      </div>
 
-  <script type="module" src="/main.js"></script>
-</body>
+      <div>
+        <button type="submit" class="btn btn-bg">Get your plant!</button>
+        <button type="reset" class="btn">Clear</button>
+      </div>
+    </form>
+
+    <script type="module" src="./src/index.js"></script>
+  </body>
 </html>
-

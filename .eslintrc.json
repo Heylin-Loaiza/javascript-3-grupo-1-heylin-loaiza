@@ -10,7 +10,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "import/extensions" : [2, "always"],
+    "import/extensions": [2, "always"],
     "prettier/prettier": [
       "error",
       {
