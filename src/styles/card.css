@@ -1,0 +1,64 @@
+.card__container {
+  width: 50%;
+}
+
+.card {
+  background-color: #7a5cfa;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.card p {
+  color: white;
+  font-size: 14px;
+}
+
+.card__title {
+  font-size: 20px !important;
+}
+
+.card__img {
+  background-color: white;
+  width: 95%;
+  margin: 20px auto;
+  height: 300px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.keys {
+  text-align: right;
+}
+
+.value {
+  text-align: left;
+}
+
+.extras{ 
+  display: flex;
+  gap: 10px;
+}
+
+.extras p {
+  margin: 0;
+}
+
+.line {
+  position: relative;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -23px;
+  height: 100%;
+  width: 2px;
+  background-color: white;
+}
+

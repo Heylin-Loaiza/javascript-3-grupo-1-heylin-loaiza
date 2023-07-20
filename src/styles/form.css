@@ -3,12 +3,17 @@
   color: rgb(83, 83, 83);
 }
 
+main{
+  display: flex;
+}
+
 p {
   margin: 10px 0;
 }
 
 .form {
-  width: 430px;
+  width: 50%;
+  margin-left: 20px;
 }
 
 .title-form {

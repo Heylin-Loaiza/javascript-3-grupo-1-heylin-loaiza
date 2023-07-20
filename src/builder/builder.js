@@ -28,8 +28,8 @@ class Plant {
     return this;
   }
 
-  setExtra(extra) {
-    this.extra = extra;
+  setExtras(extra) {
+    this.extras = extra;
     return this;
   }
 }
