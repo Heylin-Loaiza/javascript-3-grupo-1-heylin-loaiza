@@ -9,12 +9,12 @@ class Plant {
   }
 
   withClayPot() {
-    this.pot = 'Clay pot';
+    this.pot = 'clay-pot';
     return this;
   }
 
   withCeramicPot() {
-    this.pot = 'Ceramic pot';
+    this.pot = 'ceramic-pot';
     return this;
   }
 

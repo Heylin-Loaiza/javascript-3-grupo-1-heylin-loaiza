@@ -1,7 +1,6 @@
 import typeOfPlants from '../config.js';
-import Plant from '../builder/builder.js';
-//import card from './card.js';
-import '../styles/form.css';
+import Plant from '../patterns/builder.js';
+import card from './card.js';
 
 const form = document.querySelector('#form');
 
@@ -62,12 +61,12 @@ function formEvent() {
       .setExtras(extras);
     if (formData.watering === 'overwater') {
       plant.withClayPot();
-      plant.setSoil('Drainage');
+      plant.setSoil('drainage');
     } else {
       plant.withCeramicPot();
     }
 
-    //card(plant);
+    card(plant);
   });
 }
 

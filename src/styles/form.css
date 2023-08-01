@@ -1,3 +1,6 @@
+@import url('./toggle.css');
+@import url('./dropdown.css');
+
 * {
   font-family: 'Roboto', sans-serif;
   color: rgb(83, 83, 83);
@@ -5,15 +8,12 @@
 
 main{
   display: flex;
+  justify-content: center;
+  gap: 200px;
 }
 
 p {
   margin: 10px 0;
-}
-
-.form {
-  width: 50%;
-  margin-left: 20px;
 }
 
 .title-form {

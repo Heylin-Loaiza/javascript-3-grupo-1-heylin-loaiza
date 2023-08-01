@@ -1,29 +1,29 @@
 const typeOfPlants = {
   lowLight: {
     toxic: {
-      default: 'Sansevieria',
-      overwater: 'Peace lily',
+      default: 'sansevieria',
+      overwater: 'peace-lily',
     },
     noToxic: {
-      default: 'Boston Fern',
+      default: 'boston-fern',
     },
   },
   mediumLight: {
     toxic: {
-      default: 'Aglaonema',
-      overwater: 'Peace lily',
+      default: 'aglaonema',
+      overwater: 'peace-lily',
     },
     noToxic: {
-      default: 'Monstera',
-      overwater: 'Peace lily',
+      default: 'monstera',
+      overwater: 'peace-lily',
     },
   },
   outdoor: {
     toxic: {
-      default: 'Aloe Vera',
+      default: 'aloe-vera',
     },
     noToxic: {
-      default: 'Cactus',
+      default: 'cactus',
     },
   },
 };

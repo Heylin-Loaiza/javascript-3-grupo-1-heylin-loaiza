@@ -1,0 +1,84 @@
+<h1 class="title-form">Customize your plant!</h1>
+<form action="">
+  <p class="question-text">Choose your pot:</p>
+
+  <div class="question">
+    <p class="question-text">Pot material</p>
+    <div class="answer-group">
+      <input id="clay" type="radio" name="pot" value="clay"/>
+      <label for="clay">Clay</label>
+    </div>
+    <div class="answer-group">
+      <input id="ceramic" type="radio" name="pot" value="ceramic"/>
+      <label for="ceramic">Ceramic</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p class="question-text">Pot decorations</p>
+    <div class="answer-group">
+      <label for="decoration" class="switch">
+      <input id="decoration" type="checkbox" name="decoration"/>
+      <span class="slider round"></span>
+      No</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p class="question-text">Pot color</p>
+    <div class="answer-group">
+      <label for="color" class="switch">
+      <input id="color" type="checkbox" name="color"/>
+      <span class="slider round"></span>
+      No</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p class="question-text">Choose your plant</p>
+    <div class="answer-group">
+      <label for="plant"></label>
+      <select id="plant" name="plant" class="dropdown">
+        <option value="aglaonema">Aglaonema Silver Bay</option>
+        <option value="vera">Aloe Vera</option>
+        <option value="fern">Boston Fern</option>
+        <option value="cactus">Cactus</option>
+        <option value="monstera">Monstera Deliciosa</option>
+        <option value="peace-lily">Peace Lily</option>
+        <option value="sansevieria">Sansevieria</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="question">
+    <p class="question-text">Choose your soil</p>
+    <div class="answer-group">
+      <input type="radio" name="soil" id="composted" value="composted">
+      <label for="composted">Basic composted soil</label>
+    </div>
+    <div class="answer-group">
+      <input type="radio" name="soil" id="fertilized" value="fertilized">
+      <label for="fertilized">Premium fertilized soil</label>
+    </div>
+    <div class="answer-group">
+      <input type="radio" name="soil" id="drainage" value="drainage">
+      <label for="drainage">Easy drainage soil</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p class="question-text">Choose your extras</p>
+    <div class="answer-group">
+      <input id="mossPole" type="checkbox" name="extras" value="moss-pole" />
+      <label for="mossPole">Moss pole</label>
+    </div>
+    <div class="answer-group">
+      <input id="pebbles" type="checkbox" name="extras" value="pebbles" />
+      <label for="pebbles">Pebbles</label>
+    </div>
+    <div class="answer-group">
+      <input id="smaller" type="checkbox" name="extras" value="mini-plants" />
+      <label for="smaller">Smaller plants</label>
+    </div>
+  </div>
+</form>

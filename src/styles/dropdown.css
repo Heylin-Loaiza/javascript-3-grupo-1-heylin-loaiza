@@ -1,0 +1,15 @@
+.dropdown { 
+  border: 2px solid #7a5cfa;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dropdown option {
+  font-size: 14px;
+  padding: 5px;
+  
+}
+
+.dropdown option:hover {
+  background-color: #7a5cfa;
+}

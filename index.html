@@ -11,11 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/styles/form.css" />
+    <link rel="stylesheet" href="./src/styles/card.css" />
   </head>
   <body>
     <main>
-      <div class="form">
-        <h1 class="title-form">Let us find the perfect plant for you!</h1>
+      <div class="form" id="form-container">
+        <h1 class="title-form" id="title-form">Let us find the perfect plant for you!</h1>
         <form action="" id="form" class="">
           <div class="question">
             <p class="question-text">Where will you place your plant?</p>
@@ -58,7 +59,7 @@
                 id="sunlight"
                 type="radio"
                 name="soil"
-                value="Composed"
+                value="composted"
                 required
               />
               <label for="sunlight">Yes</label>
@@ -68,7 +69,7 @@
                 id="noSunlight"
                 type="radio"
                 name="soil"
-                value="Fertilized"
+                value="fertilized"
                 required
               />
               <label for="noSunlight">No</label>
@@ -162,7 +163,7 @@
               Do you want to add any extra elements to your plant?
             </p>
             <div class="answer-group">
-              <input id="mossPole" type="checkbox" name="extras" value="mossPole" />
+              <input id="mossPole" type="checkbox" name="extras" value="moss-pole" />
               <label for="mossPole">Moss pole</label>
             </div>
             <div class="answer-group">
@@ -170,7 +171,7 @@
               <label for="pebbles">Pebbles</label>
             </div>
             <div class="answer-group">
-              <input id="smaller" type="checkbox" name="extras" value="smaller" />
+              <input id="smaller" type="checkbox" name="extras" value="mini-plants" />
               <label for="smaller">Smaller plants</label>
             </div>
           </div>
@@ -181,7 +182,7 @@
           </div>
         </form>
       </div>
-      <div id="card__container"></div>
+      <div class="card__container" id="card__container"></div>
     </main>
     <script type="module" src="./src/index.js"></script>
   </body>
