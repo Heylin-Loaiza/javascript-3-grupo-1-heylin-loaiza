@@ -5,7 +5,7 @@ const typeOfPlants = {
       overwater: 'peace-lily',
     },
     noToxic: {
-      default: 'boston-fern',
+      default: 'fern',
     },
   },
   mediumLight: {
@@ -20,7 +20,8 @@ const typeOfPlants = {
   },
   outdoor: {
     toxic: {
-      default: 'aloe-vera',
+      default: 'aloe',
+      overwater: 'aloe',
     },
     noToxic: {
       default: 'cactus',
@@ -28,4 +29,18 @@ const typeOfPlants = {
   },
 };
 
-export default typeOfPlants;
+const state = {
+  name: '',
+  color: 'no-color',
+  soil: '',
+  pot: '',
+  style: '',
+  extras: [],
+};
+
+const potStyle = {
+  colors: ['blue', 'pink', 'green', 'purple'],
+  styles: ['decorated', 'simple', 'painted'],
+};
+
+export { typeOfPlants, state, potStyle };

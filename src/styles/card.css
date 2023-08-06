@@ -25,7 +25,7 @@
   margin-top: 10px;
 }
 
-.card__title::first-letter {
+.text-uc::first-letter {
   text-transform: uppercase;
 }
 

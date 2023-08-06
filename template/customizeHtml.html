@@ -5,11 +5,11 @@
   <div class="question">
     <p class="question-text">Pot material</p>
     <div class="answer-group">
-      <input id="clay" type="radio" name="pot" value="clay"/>
+      <input data-id="clay" id="clay" type="radio" name="pot" value="clay" class="material"/>
       <label for="clay">Clay</label>
     </div>
     <div class="answer-group">
-      <input id="ceramic" type="radio" name="pot" value="ceramic"/>
+      <input data-id="ceramic" id="ceramic" type="radio" name="pot" value="ceramic" class="material"/>
       <label for="ceramic">Ceramic</label>
     </div>
   </div>
@@ -22,6 +22,7 @@
       <span class="slider round"></span>
       No</label>
     </div>
+    <div id="container-styles"></div>
   </div>
 
   <div class="question">
@@ -32,6 +33,7 @@
       <span class="slider round"></span>
       No</label>
     </div>
+    <div id="container-color"></div>
   </div>
 
   <div class="question">
@@ -40,7 +42,7 @@
       <label for="plant"></label>
       <select id="plant" name="plant" class="dropdown">
         <option value="aglaonema">Aglaonema Silver Bay</option>
-        <option value="vera">Aloe Vera</option>
+        <option value="aloe">Aloe Vera</option>
         <option value="fern">Boston Fern</option>
         <option value="cactus">Cactus</option>
         <option value="monstera">Monstera Deliciosa</option>
@@ -53,15 +55,15 @@
   <div class="question">
     <p class="question-text">Choose your soil</p>
     <div class="answer-group">
-      <input type="radio" name="soil" id="composted" value="composted">
+      <input data-id="composted" type="radio" name="soil" id="composted" value="composted" class="soil">
       <label for="composted">Basic composted soil</label>
     </div>
     <div class="answer-group">
-      <input type="radio" name="soil" id="fertilized" value="fertilized">
+      <input data-id="fertilized" type="radio" name="soil" id="fertilized" value="fertilized" class="soil">
       <label for="fertilized">Premium fertilized soil</label>
     </div>
     <div class="answer-group">
-      <input type="radio" name="soil" id="drainage" value="drainage">
+      <input data-id="drainage" type="radio" name="soil" id="drainage" value="drainage" class="soil">
       <label for="drainage">Easy drainage soil</label>
     </div>
   </div>
@@ -69,15 +71,15 @@
   <div class="question">
     <p class="question-text">Choose your extras</p>
     <div class="answer-group">
-      <input id="mossPole" type="checkbox" name="extras" value="moss-pole" />
+      <input id="mossPole" type="checkbox" name="extras" value="moss-pole" class="custom-extra"/>
       <label for="mossPole">Moss pole</label>
     </div>
     <div class="answer-group">
-      <input id="pebbles" type="checkbox" name="extras" value="pebbles" />
+      <input id="pebbles" type="checkbox" name="extras" value="pebbles" class="custom-extra"/>
       <label for="pebbles">Pebbles</label>
     </div>
     <div class="answer-group">
-      <input id="smaller" type="checkbox" name="extras" value="mini-plants" />
+      <input id="smaller" type="checkbox" name="extras" value="mini-plants" class="custom-extra"/>
       <label for="smaller">Smaller plants</label>
     </div>
   </div>

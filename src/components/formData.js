@@ -1,42 +1,18 @@
-import typeOfPlants from '../config.js';
+import { typeOfPlants } from '../config.js';
 import Plant from '../patterns/builder.js';
 import card from './card.js';
 
 const form = document.querySelector('#form');
 
 function getName(formData) {
-  const name = typeOfPlants[formData.location];
-  if (formData.location === 'lowLight') {
-    if (formData.pets === 'toxic' && formData.watering === 'default') {
-      return name[formData.pets].default;
-    }
-    if (formData.pets === 'toxic' && formData.watering === 'overwater') {
-      return name[formData.pets].overwater;
-    }
-    return name[formData.pets].default;
+  const light = typeOfPlants[formData.location];
+  if (formData.pets === 'toxic' && formData.watering === 'default') {
+    return light[formData.pets].default;
   }
-
-  if (formData.location === 'mediumLight') {
-    if (formData.pets === 'toxic' && formData.watering === 'default') {
-      return name[formData.pets].default;
-    }
-    if (formData.pets === 'toxic' && formData.watering === 'overwater') {
-      return name[formData.pets].overwater;
-    }
-    if (formData.pets === 'noToxic' && formData.watering === 'overwater') {
-      return name[formData.pets].overwater;
-    }
-    return name[formData.pets].default;
+  if (formData.pets === 'toxic' && formData.watering === 'overwater') {
+    return light[formData.pets].overwater;
   }
-
-  if (formData.location === 'outdoor') {
-    if (formData.pets === 'toxic') {
-      return name[formData.pets].default;
-    }
-    return name[formData.pets].default;
-  }
-
-  return null;
+  return light[formData.pets].default;
 }
 
 function formEvent() {
@@ -57,7 +33,7 @@ function formEvent() {
     const plant = new Plant(plantName)
       .setSoil(soil)
       .setPotDecoration(style)
-      .setPotColor('clay')
+      .setPotColor('unpainted')
       .setExtras(extras);
     if (formData.watering === 'overwater') {
       plant.withClayPot();
