@@ -196,23 +196,16 @@ function card(plant) {
 
     function handleChangeExtras(extras) {
       const divExtras = document.getElementById('p-extras');
-      const imgExtras = document.getElementById('img-extras');
-      const prueba = document.querySelector('.prueba')
+      const prueba = document.querySelector('.prueba');
       let a = '';
       extras.forEach((item) => {
         a += `<p class="card--font value extras">${item}</p>`;
       });
       divExtras.innerHTML = a;
       state.extras = extras;
-
-      let extraImages = ``;
-      if (extras) {
-        extras.forEach((item) => {
-          extraImages += `<img class="img-item" id="img-extras" src="../../public/assets/${item}.png" alt="">`;
-        });
-      }
-      return extraImages;
+      prueba.innerHTML = extrasImg(state);
     }
+
     // <------- suscribe las funciones ------> ////////
     function initVisualizer() {
       observerColor.subscribe(handleChangeColorPot);
