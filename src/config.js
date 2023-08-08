@@ -31,16 +31,16 @@ const typeOfPlants = {
 
 const state = {
   name: '',
-  color: 'no-color',
+  color: '',
   soil: '',
   pot: '',
   style: '',
   extras: [],
 };
 
-const potStyle = {
-  colors: ['blue', 'pink', 'green', 'purple'],
-  styles: ['decorated', 'simple', 'painted'],
+const potDesign = {
+  color: ['blue', 'pink', 'green', 'purple', 'unpainted'],
+  styles: ['decorated', 'simple'],
 };
 
-export { typeOfPlants, state, potStyle };
+export { typeOfPlants, state, potDesign };
