@@ -1,17 +1,12 @@
-import { getDesignPot } from './getDesignPot.js';
-import { state } from '../config.js';
-import initVisualizerPot from './visualizePot.js';
-import { extrasImg, eventAddExtras, initVisualizerExtras } from './extras.js';
-import initVisualizerSoil from './visualizeSoil.js';
-import initVisualizerPlant from './visualizePlant.js';
+import { extrasImg } from './extras.js';
 
-function card(plant) {
+function card(plant, container) {
   let listExtras = '';
   plant.extras.forEach((item) => {
     listExtras += `<p class="card--font value text-uc extras">${item}</p>`;
   });
 
-  document.getElementById('card__container').insertAdjacentHTML(
+  document.getElementById(container).insertAdjacentHTML(
     'afterbegin',
     `<div class="card">
       <p class="card-text">The perfect plant for you is...
@@ -40,37 +35,8 @@ function card(plant) {
         </div>
       </div>
     </div>
-    <button class="btn btn-bg card-btn" id="customize-btn">Customize!</button>
     `,
   );
-
-  state.color = plant.color;
-  state.name = plant.name;
-  state.pot = plant.pot;
-  state.soil = plant.soil;
-  state.style = plant.style;
-  state.extras = plant.extras;
-
-  const btn = document.getElementById('customize-btn');
-  btn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    const title = document.getElementById('title-form');
-    const formContainer = document.getElementById('form-container');
-    const response = await fetch('../template/customizeHtml.html');
-    const newForm = await response.text();
-
-    formContainer.innerHTML = newForm;
-    title.innerHTML = 'Customize your plant!';
-    btn.innerHTML = 'Check store availability';
-    btn.setAttribute('id', 'store');
-
-    getDesignPot();
-    eventAddExtras();
-    initVisualizerPlant();
-    initVisualizerPot();
-    initVisualizerSoil();
-    initVisualizerExtras();
-  });
 }
 
 export default card;

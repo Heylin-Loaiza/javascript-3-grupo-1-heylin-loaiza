@@ -1,6 +1,7 @@
 import { typeOfPlants } from '../config.js';
 import Plant from '../patterns/builder.js';
 import card from './card.js';
+import renderBtn from './customizeButton.js';
 
 const form = document.querySelector('#form');
 
@@ -42,7 +43,8 @@ function formEvent() {
       plant.withCeramicPot();
     }
 
-    card(plant);
+    card(plant, 'card__container');
+    renderBtn(plant);
   });
 }
 

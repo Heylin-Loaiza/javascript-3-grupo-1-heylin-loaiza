@@ -1,15 +1,17 @@
-.dropdown { 
+.dropdownSelect { 
   border: 2px solid #7a5cfa;
   border-radius: 10px;
   padding: 10px;
 }
 
-.dropdown option {
+.dropdownSelect option {
   font-size: 14px;
   padding: 5px;
   
 }
 
-.dropdown option:hover {
+.dropdownSelect option:hover {
   background-color: #7a5cfa;
 }
+
+/* Estilos para el menú desplegable */

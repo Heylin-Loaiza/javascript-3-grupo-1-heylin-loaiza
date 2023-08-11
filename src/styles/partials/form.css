@@ -1,0 +1,29 @@
+@import url('./toggle.css');
+@import url('./dropdown.css');
+
+.title-form {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.question {
+  margin-bottom: 24px;
+}
+
+.question-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.answer-group {
+  display: flex;
+}
+
+.answer-group label {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.answer-group input {
+  accent-color: #7a5cfa;
+}
