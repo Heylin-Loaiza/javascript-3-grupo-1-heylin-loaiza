@@ -14,6 +14,10 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
+        test: /\.(png|svg)$/i,
+        use: ["file-loader?name=public/assets/[name].[ext]"]
+      },
+      {
         test: /\.html$/,
         use: [{
           loader: "html-loader",

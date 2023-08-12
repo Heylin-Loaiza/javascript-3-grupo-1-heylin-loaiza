@@ -17,6 +17,7 @@
         "singleQuote": true,
         "parser": "flow"
       }
-    ]
+    ],
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["plantObj"] }]
   }
 }

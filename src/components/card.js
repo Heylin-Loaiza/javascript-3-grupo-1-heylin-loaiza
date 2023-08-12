@@ -1,4 +1,6 @@
 import { extrasImg } from './extras.js';
+import '../styles/style.css';
+require.context('/public/assets/', true, /^\.\/.*\.png/);
 
 function card(plant, container) {
   let listExtras = '';

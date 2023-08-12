@@ -6,7 +6,6 @@ const addToStack = (...middlewares) => {
 
 const run = (index, context) => {
   const middleware = stack[index];
-
   if (middleware) {
     middleware(context, () => {
       run(index + 1, context);
