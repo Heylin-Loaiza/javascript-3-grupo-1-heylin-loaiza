@@ -1,18 +1,19 @@
 import Observer from '../patterns/Observer.js';
 import { state } from '../config.js';
 
+// require.context('/assets/', true, /^\.\/.*\.png|\.\/.*\.PNG/);
 const observerExtras = new Observer();
 
 function extrasImg(plant) {
   const { name, pot, style, soil, extras, color } = plant;
   let extraImages = `
-    <img class="img-item" id="img-pot" src="../../public/assets/pots/${pot}-${style}-${color}.png" alt="">
-    <img class="img-item" id="img-soil" src="../../public/assets/soil-${soil}.png" alt="">
-    <img class="img-item img-item--plant" id="img-name" src="../../public/assets/plant-${name}.png" alt="">`;
+    <img class="img-item" id="img-pot" src="../../assets/${pot}-${style}-${color}.png" alt="">
+    <img class="img-item" id="img-soil" src="../../assets/soil-${soil}.png" alt="">
+    <img class="img-item img-item--plant" id="img-name" src="../../assets/plant-${name}.png" alt="">`;
 
   if (extras) {
     extras.forEach((item) => {
-      extraImages += `<img class="img-item" id="img-extras" src="../../public/assets/${item}.png" alt="">`;
+      extraImages += `<img class="img-item" id="img-extras" src="../../assets/${item}.png" alt="">`;
     });
   }
 

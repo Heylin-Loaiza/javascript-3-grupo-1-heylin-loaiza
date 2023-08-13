@@ -9,13 +9,14 @@ const container = document.getElementById('card__container');
 
 function link() {
   const anchor = document.createElement('a');
-  anchor.href = '../../src/pages/store.html';
+  anchor.href = '../src/pages/store.html';
   anchor.textContent = 'Check store availability';
+  anchor.id = 'store-link';
   anchor.classList.add('btn', 'btn-bg', 'anchor');
+  container.appendChild(anchor);
   anchor.addEventListener('click', () => {
     sessionStorage.setItem('plantObj', JSON.stringify(state));
   });
-  container.appendChild(anchor);
 }
 
 function renderBtn(plant) {

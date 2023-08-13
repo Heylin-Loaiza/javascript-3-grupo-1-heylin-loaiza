@@ -17,7 +17,7 @@ function handleChangeName(name) {
   const cardTitle = document.getElementById('card-title');
   nameText.textContent = `${name}`;
   cardTitle.textContent = `${name}`;
-  imgName.setAttribute('src', `../../public/assets/plant-${name}.png`);
+  imgName.setAttribute('src', `../../assets/plant-${name}.png`);
   state.name = name;
 }
 

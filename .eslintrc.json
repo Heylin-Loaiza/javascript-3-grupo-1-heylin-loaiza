@@ -18,6 +18,6 @@
         "parser": "flow"
       }
     ],
-    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["plantObj"] }]
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["plantInfo"] }]
   }
 }

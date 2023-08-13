@@ -1,78 +1,57 @@
 import { prices } from '../config.js';
+import { inventory, description } from '../api.js';
 
-const getExtrasPrices = (plantObj, next) => {
+const getInfo = async (plantInfo, next) => {
+  try {
+    const plant = inventory('plant', `${plantInfo.name}`);
+    const soil = inventory('soil', `${plantInfo.soil}`);
+    const pot = inventory(
+      'pot',
+      `${plantInfo.pot}-${plantInfo.style}-${plantInfo.color}`,
+    );
+
+    const plantDescription = await description(plantInfo.name);
+    plantInfo.info = plantDescription;
+
+    const values = await Promise.all([plant, soil, pot]);
+    plantInfo.stock = values;
+    next();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const getExtrasPrices = (plantInfo, next) => {
   let priceExtras = 0;
 
-  plantObj.extras.forEach((extra) => {
+  plantInfo.extras.forEach((extra) => {
     priceExtras += prices[extra] || 0;
   });
-
-  plantObj.extraPrices = priceExtras;
-  console.log(plantObj);
+  plantInfo.extraPrices = priceExtras;
   next();
 };
 
-// const getPotPrice = (plantObj, next) => {
-//   const { pot, color, style } = plantObj;
-//   const typeOfPot = prices[pot];
-//   if (color !== 'unpainted' && style === 'decorated') {
-//     plantObj.potPrice = typeOfPot.especial;
-//   }
-//   if (color !== 'unpainted') {
-//     plantObj.potPrice = typeOfPot.painted;
-//   }
-//   plantObj.potPrice = typeOfPot[style];
-//   next();
-// };
-const getPotPrice = (plantObj, next) => {
-  const { pot, color, style } = plantObj;
+const getPotPrice = (plantInfo, next) => {
+  const { pot, color, style } = plantInfo;
   const typeOfPot = prices[pot];
 
   if (color !== 'unpainted' && style === 'decorated') {
-    plantObj.potPrice = typeOfPot.especial;
+    plantInfo.potPrice = typeOfPot.especial;
   } else if (color !== 'unpainted') {
-    plantObj.potPrice = typeOfPot.painted;
+    plantInfo.potPrice = typeOfPot.painted;
   } else {
-    plantObj.potPrice = typeOfPot[style];
+    plantInfo.potPrice = typeOfPot[style];
   }
 
   next();
 };
-// const total = (plantObj) => {
-//   const { name, soil } = plantObj;
-//   const result =
-//     prices[name] + prices[soil] + getExtrasPrices() + getPotPrice();
-//   plantObj.total = result;
-//   console.log(plantObj)
-// };
 
-const total = (plantObj, next) => {
-  const { name, soil, extraPrices, potPrice } = plantObj;
+const total = (plantInfo, next) => {
+  const { name, soil, extraPrices, potPrice } = plantInfo;
   const result = prices[name] + prices[soil] + extraPrices + potPrice;
-  plantObj.total = result;
-  console.log(plantObj);
+  plantInfo.total = result;
+
   next();
 };
 
-const priceContent = (plantObj) => {
-  const { name, soil, pot, color, extras, style } = plantObj;
-  const text = `<div>
-      <div>
-        <p>${name}</p>
-        <p>${color} ${pot} pot - ${style}</p>
-        <p>${soil}</p>
-        <p>${extras}</p>
-        <p>Total: </p>
-      </div>
-      <div>
-        <p>$${prices[name]}</p>
-        <p>$${getPotPrice(plantObj)}</p>
-        <p>$${prices[soil]}</p>
-        <p>$${getExtrasPrices(plantObj)}</p>
-        <p>$${total(plantObj)}</p>
-      </div>
-    </div>`;
-  return text;
-};
-
-export { getExtrasPrices, getPotPrice, total, priceContent };
+export { getInfo, getExtrasPrices, getPotPrice, total };

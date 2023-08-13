@@ -13,7 +13,7 @@ function handleChangeSoil(soil) {
   const soilText = document.getElementById('p-soil');
   const imgSoil = document.getElementById('img-soil');
   soilText.textContent = `${soil}`;
-  imgSoil.setAttribute('src', `../../public/assets/soil-${soil}.png`);
+  imgSoil.setAttribute('src', `../../assets/soil-${soil}.png`);
   state.soil = soil;
 }
 

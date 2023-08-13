@@ -15,3 +15,50 @@
 }
 
 /* Estilos para el menú desplegable */
+.container {
+  margin: 10px 10px;
+}
+
+.tab {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+#container__info {
+  margin-top: 20px;
+}
+
+#container__info p,
+.alert{
+  width: 80%;
+}
+
+.content {
+  height: 0;
+  text-align: justify;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+hr {
+  width: 80%;
+  margin-left: 0;
+  border: 1px solid grey;
+}
+
+.container.active .content {
+  height: 100%;
+}
+
+.content--flex {
+  display: flex;
+  gap: 5px
+}
+
+.content--flex p {
+  margin: 7px;
+}
+
+.content--flex div {
+  width: 40%;
+}

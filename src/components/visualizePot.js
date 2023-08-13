@@ -11,7 +11,7 @@ function handleChangeColorPot(color) {
   colorText.textContent = `${color}`;
   imgPot.setAttribute(
     'src',
-    `../../public/assets/pots/${state.pot}-${state.style}-${color}.png`,
+    `../../assets/${state.pot}-${state.style}-${color}.png`,
   );
   state.color = color;
 }
@@ -22,7 +22,7 @@ function handleChangePot(pot) {
   potText.textContent = `${pot} with ${state.style}`;
   imgPot.setAttribute(
     'src',
-    `../../public/assets/pots/${pot}-${state.style}-${state.color}.png`,
+    `../../assets/${pot}-${state.style}-${state.color}.png`,
   );
   state.pot = pot;
 }
@@ -33,7 +33,7 @@ function handleChangeStyle(style) {
   potText.textContent = `${state.pot} with ${style}`;
   imgPot.setAttribute(
     'src',
-    `../../public/assets/pots/${state.pot}-${style}-${state.color}.png`,
+    `../../assets/${state.pot}-${style}-${state.color}.png`,
   );
   state.style = style;
 }

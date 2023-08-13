@@ -14,8 +14,8 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(png|svg)$/i,
-        use: ["file-loader?name=public/assets/[name].[ext]"]
+        test: /\.(png|svg|PNG)$/,
+        use: ["file-loader?name=assets/[name].[ext]"]
       },
       {
         test: /\.html$/,
@@ -32,6 +32,14 @@ module.exports = {
     new HtmlWebpackPlugin ({
       template: './index.html',
       filename: 'index.html'
-    })
+    }),
+    new HtmlWebpackPlugin({
+      template: './template/customizeHtml.html',
+      filename: 'customizeHtml.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/store.html',
+      filename: 'store.html',
+    }),
   ]
 }
